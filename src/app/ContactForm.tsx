@@ -1,14 +1,18 @@
 'use client';
 
 import Link from 'next/link';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
+import Footer from './Footer';
 
 export default function ContactForm() {
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
   const onSubmit = (data: any) => {
@@ -18,9 +22,27 @@ export default function ContactForm() {
       headers: {
         'Content-Type': 'application/json',
       },
+    }).then(() => {
+      setIsFormSubmitted(true);
+      reset();
     });
   };
 
+  if (isFormSubmitted) {
+    return (
+      <>
+        <div className='bg-white text-black flex flex-col justify-center items-center'>
+          <h3 className='text-4xl text-primary pt-8 font-libreBaskerville'>
+            Thank You!
+          </h3>
+          <p className='text-lg max-w-4xl text-center px-10 pb-20'>
+            Your message has been submitted successfully.
+          </p>
+        </div>
+        <Footer />
+      </>
+    );
+  }
   return (
     <div className='bg-white text-black flex flex-col justify-center items-center '>
       <h3 className='text-4xl text-primary pt-8 font-libreBaskerville'>
@@ -103,27 +125,7 @@ export default function ContactForm() {
           admin@dragonwooddesigns.art
         </a>
       </div>
-      <div className='w-full bg-black/90 text-white text-center p-10'>
-        <div className='flex w-full justify-center space-x-4 pb-10'>
-          <Link
-            href='https://www.facebook.com/DragonwoodDesignsAU'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <FaFacebook className='text-white h-8 w-8 cursor-pointer' />
-          </Link>
-          <Link
-            href='https://www.instagram.com/dragonwooddesignsau/'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <FaInstagram className='text-white h-8 w-8 cursor-pointer' />
-          </Link>
-        </div>
-        <p className='py-4 text-xs font-normal text-gray-300'>
-          Copyright © 2023 Dragonwood Designs - All Rights Reserved.
-        </p>
-      </div>
+      <Footer />
     </div>
   );
 }
