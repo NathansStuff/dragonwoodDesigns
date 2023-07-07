@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import ContactForm from './ContactForm';
+import Button from './Button';
 
 export default function Home() {
   return (
@@ -41,9 +42,7 @@ export default function Home() {
       <div className='absolute flex items-center justify-center top-[26rem] left-0 right-0 flex-col md:top-[35rem] lg:top-[30rem]'>
         <div className='flex justify-center items-center h-full w-full'>
           <div className='max-w-xs sm:max-w-sm w-full'>
-            <button className='text-white bg-black rounded-full text-sm py-4 w-full'>
-              ETSY STORE
-            </button>
+            <Button />
           </div>
         </div>
       </div>
