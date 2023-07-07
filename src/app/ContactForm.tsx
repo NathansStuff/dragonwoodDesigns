@@ -18,13 +18,7 @@ export default function ContactForm() {
       headers: {
         'Content-Type': 'application/json',
       },
-    })
-      .then(() => {
-        setSubmitted(true);
-      })
-      .catch((error) => {
-        setSubmitted(false);
-      });
+    });
   };
 
   return (
