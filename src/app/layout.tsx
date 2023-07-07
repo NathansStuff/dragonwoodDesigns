@@ -20,7 +20,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={`${inter.className} ${libreBaskerville.className}`}>{children}</body>
+      <head>
+        <link
+          rel='icon'
+          href={'/favicon.png'}
+        />
+      </head>
+      <body className={`${inter.className} ${libreBaskerville.className}`}>
+        {children}
+      </body>
     </html>
   );
 }
