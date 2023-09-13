@@ -2,6 +2,7 @@ import Image from 'next/image';
 import ContactForm from './ContactForm';
 import Button from './Button';
 import Socials from '@/components/Socials';
+import Testimonials from '@/components/Testimonials';
 
 export default function Home() {
   return (
@@ -48,6 +49,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Testimonials />
       <ContactForm />
     </main>
   );

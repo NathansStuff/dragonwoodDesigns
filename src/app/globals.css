@@ -25,3 +25,9 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@layer components {
+  .flex-center {
+    @apply flex justify-center items-center text-center;
+  }
+}
