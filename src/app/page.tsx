@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import ContactForm from './ContactForm';
 import Button from './Button';
+import Socials from '@/components/Socials';
 
 export default function Home() {
   return (
@@ -33,10 +34,11 @@ export default function Home() {
       </div>
       <div className='absolute flex items-center justify-center top-60 left-0 right-0 flex-col md:top-[20rem]'>
         <div className='max-h-full max-w-full h-40 w-full text-center px-10 relative'>
-          <h1 className='text-5xl md:text-7xl text-black text-center font-libreBaskerville w-full'>
+          <h1 className='text-5xl md:text-7xl text-black text-center font-libreBaskerville w-full pb-5'>
             Website <br className='lg:hidden' />
             Launching Soon
           </h1>
+          <Socials />
         </div>
       </div>
       <div className='absolute flex items-center justify-center top-[26rem] left-0 right-0 flex-col md:top-[35rem] lg:top-[30rem]'>
