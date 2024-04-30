@@ -6,14 +6,14 @@ function CodePage() {
   const searchParams = useSearchParams();
   const url = process.env.NEXT_PUBLIC_SCANWARE_FORWARD ?? '';
 
-  const code = searchParams?.get('i');
-  const forwardUrl = `${url}/${code}`;
+  const code = searchParams?.get('id');
+  const forwardUrl = `${url}?i=${code}`;
 
   if (code) {
     window.location.href = forwardUrl;
   }
 
-  return <></>;
+  return <div></div>;
 }
 
 export default CodePage;
